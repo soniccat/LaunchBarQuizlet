@@ -52,7 +52,7 @@ class QuizletAuthorizer
     @secretKey = "bPHS9xz2sCXWwq5ddcWswG"
     @redirectUrl = "http://gaolife.blogspot.ru"
     @appPath = "../OAuthAuthorizer.app/Contents/MacOS/OAuthAuthorizer"
-    @storeName = "../../../authStore"
+    @storeName = "./authStore"
     @authInfo = loadAuthInfo()
   end
 
@@ -154,7 +154,7 @@ class QuizletCommand
   end
 
   def run
-    File.open("../../../outputQuizlet", "at") {|f| f.write("\n");f.write(curlCommand())}
+    #File.open("../../../outputQuizlet", "at") {|f| f.write("\n");f.write(curlCommand())}
     uri = URI(URI::encode(command))
 
     res = nil
@@ -167,17 +167,17 @@ class QuizletCommand
       end
     end
 
-    File.open("../../../outputQuizlet", "at") do |f|
-      f.write("\n");
-      
-      if (res.is_a?(Net::HTTPResponse))
-      f.write(res.code)
-      f.write(res.body)
-
-      elsif (res.is_a?(String))
-      f.write(res)
-      end
-    end
+    # File.open("../../../outputQuizlet", "at") do |f|
+      # f.write("\n");
+#       
+      # if (res.is_a?(Net::HTTPResponse))
+      # f.write(res.code)
+      # f.write(res.body)
+# 
+      # elsif (res.is_a?(String))
+      # f.write(res)
+      # end
+    # end
 
     return res
   end
@@ -306,8 +306,8 @@ end
 class QuizletApi
   attr_accessor :performer, :currentSet, :lastCard, :currentSetStoreName, :lastCardStoreName
   def initialize(performer)
-    @currentSetStoreName = "../../../quizletCurrentSet"
-    @lastCardStoreName = "../../../quizletCurrentWord"
+    @currentSetStoreName = "./quizletCurrentSet"
+    @lastCardStoreName = "./quizletCurrentWord"
 
     @performer = performer
     @currentSet = loadCurrentSet()
