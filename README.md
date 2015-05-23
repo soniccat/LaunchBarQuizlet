@@ -28,7 +28,7 @@ When you select Change Term/Definition option you can use the string in a set's 
 
 ![](https://github.com/soniccat/LaunchBarQuizlet/blob/master/img/edit2.png)
 
-Also the string is used a search query:
+Also the string is used as a search query:
 
 ![](https://github.com/soniccat/LaunchBarQuizlet/blob/master/img/search.png)
 
