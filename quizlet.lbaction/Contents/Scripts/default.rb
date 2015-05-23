@@ -411,10 +411,7 @@ if ARGV.length > 0
     #File.open("../../../outputQuizlet2", "a") {|f| f.write(e.backtrace)}
     
     str = ARGV[0]
-    if str.start_with? 'set '
-      #TODO: search for sets
-    
-    elsif str.start_with? 'ed '
+    if str.start_with? 'ed '
       cmdLen = 'ed '.length
       word = str[cmdLen,str.length-cmdLen]
       items = handleArgs({'_act'=>'editWordTerm', '_word'=>word}, quizletApi)
