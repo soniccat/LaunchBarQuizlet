@@ -84,6 +84,7 @@ def quizletTermsToItems(terms, setId, filter = nil, word = nil)
       
       item['title'] = title
       item['subtitle'] = v['definition']
+      item['alwaysShowsSubtitle'] = true
       item['icon'] = 'word.png'
       item['children'] = [{'title' => v['definition']}]
       item['_id'] = v['id']
